@@ -89,12 +89,11 @@
               const withdrawNumber = getInputNumber("withdrawAmount");
               updateSpanText("currentWithdraw", withdrawNumber);
               updateSpanText("currentBalance", -1 * withdrawNumber);
-              
+              //after adding clean your input through this
               document.getElementById("withdrawAmount").value =""; 
-
           })
-          
-
+        
+        
           function getInputNumber(id){
             const Amount=document.getElementById(id).value;
             const amountNumber = parseFloat(Amount);
@@ -109,6 +108,7 @@
 
         function updateSpanText(id, addedNumber){
             const current =document.getElementById(id).innerText;
+            //if you are using span tag then you have to use .innerText extension for getting value otherwise you can use .value
              const currentNumber = parseFloat(current);
              const total = addedNumber + currentNumber;
              document.getElementById(id).innerText = total;
